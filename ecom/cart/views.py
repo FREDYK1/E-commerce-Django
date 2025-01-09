@@ -13,7 +13,7 @@ def cart_add(request):
     # Get the cart
     cart = Cart(request)
     # test for Post
-    if request.POST.get("action") == "post":
+    if request.method == "POST" and request.POST.get("action") == "post":
         # Get id
         product_id = int(request.POST.get("product_id"))
         # lookup product with id
